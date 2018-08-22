@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #c3d6f7">
+
+<div class="container">
+    <h1 style="text-align: center; padding: 10px; background-color: #0983a2; color: white; font-family: 'Times New Roman';">PROJECT LIST</h1>
+    <br/>
+    <br/>
+    <div class="row">
+            <div class="show-project" style="padding-left: 65px;">
+                <div class="row">
+                {% for project in data %}
+                    <div class="show-style" style="border: 2px solid black; padding: 5px; margin: 5px; width: 250px; text-align: center; font-family: 'Times New Roman'; background-color: darkgrey">
+                        <div class="col-md-12">
+                            <h4 id="name">{{ project.Name }}</h4>
+                            <p id="desc">{{ project.Description }}</p>
+                            <p id="images"><img src="{{  project.Image.url}}" height="150px" width="150px"></p>
+                            <br/>
+                            <br/>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>
